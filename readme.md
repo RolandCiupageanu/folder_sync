@@ -52,7 +52,8 @@ folder_sync.py : the name of the file to execute
 C:\\Users\\Roland\\Desktop\\folder0 : path of the source folder
 C:\\Users\\Roland\\Desktop\\folder1 : path of the replica folder
 C:\\Users\\Roland\\Desktop\\log : path of the log.txt file
-0  : the scheduled time (with 0 the program will only execute once)
+
+0 : the scheduled time (with 0 the program will only execute once)
 
 
 
