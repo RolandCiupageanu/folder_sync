@@ -23,6 +23,8 @@ These two folders are synchronized only one way: the files and folders from the 
 The program comunicates with the user via command line arguments.
 The user must must provide the following command line argumets format:
 
+**Note! The paths are absolute paths, and they will be provided using double back slashes.**
+
 The interpreter: example: python 
 
 sys.argv[0]: example: folder_sync.py
