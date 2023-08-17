@@ -23,10 +23,10 @@ These two folders are synchronized only one way: the files and folders from the 
 The program comunicates with the user via command line arguments.
 The user must must provide the following command line argumets format:
 
-**Note! The paths are absolute paths, and they will be provided using double back slashes.**
+**Note! The paths are absolute paths, and they will be provided using the following slashes: \\ or // or /.**
+**Note! Avoid providing paths using \ as it will be treated as an escape character.**
 
-The interpreter: example: python 
-
+The name of the program:
 sys.argv[0]: example: folder_sync.py
 
 Path of the source folder:
@@ -50,7 +50,7 @@ Example of the full path:
 where:
 
 python : is the name of the interpreter
-folder_sync.py : the name of the file to execute
+folder_sync.py : the name of the program to execute
 C:\\Users\\Roland\\Desktop\\folder0 : path of the source folder
 C:\\Users\\Roland\\Desktop\\folder1 : path of the replica folder
 C:\\Users\\Roland\\Desktop\\log : path of the log.txt file
@@ -81,6 +81,10 @@ Case 1: Both source and replica folders are empty, so there is nothing to do bec
 
 9. Scheduled time: using this time provided in sys.argv[4], the program will repeat periodically (see the above section: "logic and usage")
 
-### 3. Requirements
-No additional libraries need to be installed.
-I've used only Python3 standard libraries, so there is no need to pip install any libraries.
+### 3. Testing
+The unit tests are in the test_folder_sync.py an can be run using the pytest library using the command:
+**pytest test_folder_sync.py**
+
+### 4. Requirements
+The only library that needs to be installed is pytest.
+You can find it in the requirements.txt file and install it using the **pip install pytest** command.
