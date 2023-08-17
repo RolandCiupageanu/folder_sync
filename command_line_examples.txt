@@ -1,0 +1,16 @@
+Command line arguments examples:
+
+This won't work because the paths are provided using backslash, that will be considered escape character:
+python project.py C:\Roland\Source C:\Roland\Replica C:\Roland\Log 0
+
+This is working:
+python folder_sync2.py C:\\Users\\Roland\\Desktop\\folder0 C:\\Users\\Roland\\Desktop\\folder1 C:\\Users\\Roland\\Desktop\\log 0
+
+This is also working:
+python project.py C:\\Roland\\Source C:\\Roland\\Replica C:\\Roland\\Log 0 
+
+This is also working:
+python project.py C:/Roland/Source C:/Roland/Replica C:/Roland/Log 0
+
+This is also working:
+python project.py C://Roland//Source C://Roland//Replica C://Roland//Log 0
