@@ -50,8 +50,8 @@ def get_path():
     return source, replica, log
 
 def convert_path(path):
-    """Allows the user to type paths using \\, / or //. All will be converted to //.
-    !!!Using \ will work in the function but FAIL in the program because as a command line argument will be considered
+    """Allows the user to type paths using '\\', '/' or '//'. All will be converted to '//'.
+    !!!Using '\' will work in the function but FAIL in the program because as a command line argument will be considered
     an escape character."""
     converted_path = ""
     for char in path:
@@ -166,7 +166,7 @@ def main():
 
     # If there are no slashes in the path, notofy the user that maybe this is the problem.
     if not check_slash(source_path) or not check_slash(replica_path) or not check_slash(log_path):
-        hint_msg = " !Possible cause: missing slashes or \ in provided path!"
+        hint_msg = r" !Possible cause: missing slashes or \ in provided path!"
 
     if get_file(log_path) == False:
         # Signals that the log file couldn't be created.
