@@ -242,9 +242,7 @@ def main():
     # More files/ foders in the replica then in the source ==> delete the nonsync files from replica folder
     elif len(list_source) < len(list_replica):
         time = current_time()
-
         deleted_list = delete_file(list_source,list_replica,replica_path)
-
         delete_file(list_source,list_replica,replica_path)
 
         # Log file and message handling
@@ -257,9 +255,27 @@ def main():
             # No log file created, messages display only in the console
             print(f"{time} The files {deleted_list} were deleted from the replica folder! NO log file created!")
 
+
     # Case 3
     # More files/ foders in the source then in the replica ==> copy files from source to replica folder
     elif len(list_source) > len(list_replica):
+        # ============================================================================================
+        # Even if list_source > list_replica, first delete nonsync files from replica, then copy files
+        time = current_time()
+        deleted_list = delete_file(list_source,list_replica,replica_path)
+        delete_file(list_source,list_replica,replica_path)
+
+        # Log file and message handling
+        # If the log.txt is present in the log_path(no error and the file was created)
+        if log_file_status == 0:
+            with open(log_path + "\\" + "log.txt", "a") as logfile:
+                logfile.write(f"{time} The files {deleted_list} were deleted from the replica folder\n")
+            print(f"{time} The files {deleted_list} were deleted from the replica folder")
+        else:
+            # No log file created, messages display only in the console
+            print(f"{time} The files {deleted_list} were deleted from the replica folder! NO log file created!")
+        # ============================================================================================
+
         # Time in dd/mm/YY H:M:S format, string
         time = current_time()
 
